@@ -15,12 +15,12 @@ public class MoneyTransferTest {
         open("http://localhost:9999");
         var loginPage = new LoginPage();
 
-        var authInfo = DataHelper.getAuthInfo(); // vasya / qwerty123
+        var authInfo = DataHelper.getAuthInfo();
         var verificationPage = loginPage.validLogin(authInfo);
-        var verificationCode = DataHelper.getVerificationCodeFor(authInfo); // 12345
+        var verificationCode = DataHelper.getVerificationCodeFor(authInfo);
         verificationPage.validVerify(verificationCode);
 
-        var amount = 500;//amount for transfer
+        var amount = 500;
         var dashboardPage = new DashboardPage();
         var cardInfoTo = DataHelper.getCardInfoToFirst();
         var startCardBalance = dashboardPage.getStartBalance(cardInfoTo);
@@ -37,14 +37,14 @@ public class MoneyTransferTest {
         open("http://localhost:9999");
         var loginPage = new LoginPage();
 
-        var authInfo = DataHelper.getAuthInfo(); // vasya / qwerty123
+        var authInfo = DataHelper.getAuthInfo();
         var verificationPage = loginPage.validLogin(authInfo);
-        var verificationCode = DataHelper.getVerificationCodeFor(authInfo); // 12345
+        var verificationCode = DataHelper.getVerificationCodeFor(authInfo);
         verificationPage.validVerify(verificationCode);
 
         var amount = 500;//amount for transfer
         var dashboardPage = new DashboardPage();
-        var cardInfoTo = DataHelper.getCardInfoToSecond(); // transfer to second from first card
+        var cardInfoTo = DataHelper.getCardInfoToSecond();
         var startCardBalance = dashboardPage.getStartBalance(cardInfoTo);
         var choiceTo = dashboardPage.choiceTransferTo(cardInfoTo);
         choiceTo.moneyTransfer(cardInfoTo, amount);
@@ -59,9 +59,9 @@ public class MoneyTransferTest {
         open("http://localhost:9999");
         var loginPage = new LoginPage();
 
-        var authInfo = DataHelper.getAuthInfo(); // vasya / qwerty123
+        var authInfo = DataHelper.getAuthInfo();
         var verificationPage = loginPage.validLogin(authInfo);
-        var verificationCode = DataHelper.getVerificationCodeFor(authInfo); // 12345
+        var verificationCode = DataHelper.getVerificationCodeFor(authInfo);
         verificationPage.validVerify(verificationCode);
 
         var amount = -500;//amount for transfer
@@ -80,14 +80,14 @@ public class MoneyTransferTest {
         open("http://localhost:9999");
         var loginPage = new LoginPage();
 
-        var authInfo = DataHelper.getAuthInfo(); // vasya / qwerty123
+        var authInfo = DataHelper.getAuthInfo();
         var verificationPage = loginPage.validLogin(authInfo);
-        var verificationCode = DataHelper.getVerificationCodeFor(authInfo); // 12345
+        var verificationCode = DataHelper.getVerificationCodeFor(authInfo);
         verificationPage.validVerify(verificationCode);
 
-        var amount = 0;//amount for transfer
+        var amount = 0;
         var dashboardPage = new DashboardPage();
-        var cardInfoTo = DataHelper.getCardInfoToSecond(); // transfer to second from first card
+        var cardInfoTo = DataHelper.getCardInfoToSecond();
         var startCardBalance = dashboardPage.getStartBalance(cardInfoTo);
         var choiceTo = dashboardPage.choiceTransferTo(cardInfoTo);
         choiceTo.moneyTransfer(cardInfoTo, amount);
@@ -101,14 +101,14 @@ public class MoneyTransferTest {
         open("http://localhost:9999");
         var loginPage = new LoginPage();
 
-        var authInfo = DataHelper.getAuthInfo(); // vasya / qwerty123
+        var authInfo = DataHelper.getAuthInfo();
         var verificationPage = loginPage.validLogin(authInfo);
-        var verificationCode = DataHelper.getVerificationCodeFor(authInfo); // 12345
+        var verificationCode = DataHelper.getVerificationCodeFor(authInfo);
         verificationPage.validVerify(verificationCode);
 
         var amount = 500;//amount for transfer
         var dashboardPage = new DashboardPage();
-        var cardInfoTo = DataHelper.getCardInfoWrongToFirst(); // transfer to wrong first from second card
+        var cardInfoTo = DataHelper.getCardInfoWrongToFirst();
         var startCardBalance = dashboardPage.getStartBalance(cardInfoTo);
         var choiceTo = dashboardPage.choiceTransferTo(cardInfoTo);
         choiceTo.moneyTransfer(cardInfoTo, amount);
